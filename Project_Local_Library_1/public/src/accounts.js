@@ -18,59 +18,8 @@ function getTotalNumberOfBorrows(account, books) {
   },0)
 
 }
-   /* const accId = account.id;
-    let total = 0;
-    books.some(book => book.borrows.some(borrow => accId === borrow.id && total++));
-    return total;
-  }*/
 
-/*
-It returns an array of books and authors that represents all books _currently checked out_ by the given account. 
-_Look carefully at the object below,_ as it's not just the book object; the author object is embedded inside of it.
-id: "5f447132320b4bc16f950076",
-      title: "est voluptate nisi",
-      genre: "Classics",
-      authorId: 12,
-      author: {
-        id: 12,
-        name: {
-          first: "Chrystal",
-          last: "Lester",
-        },
-      },
-      borrows: [
-        {
-          id: "5f446f2e6059326d9feb9a68",
-          returned: false,
-        },
-*/
 
-/**
-EXAMPLES 
-
-Author Object:
-{
-    id: 0,
-    name: {
-      first: "Lucia",
-      last: "Moreno",
-    },
-}
-
-Book Object:
-  {
-    id: "5f4471329627160be1e8ce92",
-    title: "esse ea veniam non occaecat",
-    genre: "Classics",
-    authorId: 10,
-    borrows: [
-      {
-        id: "5f446f2ed3609b719568a415",
-        returned: false,
-      },
-    ],
-  },
- */
 
 /**
  * Returns an array of books and authors checked out by given account.

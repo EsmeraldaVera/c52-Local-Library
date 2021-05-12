@@ -22,16 +22,6 @@ function partitionBooksByBorrowedStatus(books) {
  
 }
 
-/*
- loanedOut =[]
-  returned = []
-  let allBooks = books.filter((book) => book.borrows[0] === false ? loanedOut.push(book) : returned.push(book))
-  console.log(allBooks)
-}*/
-
-
-
-
 
 function getBorrowersForBook(book, accounts) {
 const accountsById = accounts.reduce((acc, account)=>{
