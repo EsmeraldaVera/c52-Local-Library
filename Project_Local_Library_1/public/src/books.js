@@ -1,0 +1,55 @@
+function findAuthorById(authors, id) {
+  const foundAuthor = authors.find((author)=> author.id ===id)
+ return foundAuthor
+}
+
+function findBookById(books, id) {
+  const foundBook = books.find ((book) => book.id ===id)
+  return foundBook
+}
+
+function partitionBooksByBorrowedStatus(books) {
+ return books.reduce ((acc, book) => {
+   const [borrowed, returned] = acc ///this creates the two arrays at the end
+   const recent = book.borrows[0]
+   if (recent.returned) {
+     returned.push(book)
+   }else {
+     borrowed.push(book)
+    }
+    return acc
+ }, [[],[]])
+ 
+}
+
+/*
+ loanedOut =[]
+  returned = []
+  let allBooks = books.filter((book) => book.borrows[0] === false ? loanedOut.push(book) : returned.push(book))
+  console.log(allBooks)
+}*/
+
+
+
+
+
+function getBorrowersForBook(book, accounts) {
+const accountsById = accounts.reduce((acc, account)=>{
+  acc [account.id] = account
+  return acc
+},{})
+
+return book.borrows.map (({id, returned}) => ({
+  ...accountsById[id],
+  returned, 
+}))
+.slice(0, 10)
+}
+
+
+module.exports = {
+  findAuthorById,
+  findBookById,
+  partitionBooksByBorrowedStatus,
+  getBorrowersForBook,
+};
